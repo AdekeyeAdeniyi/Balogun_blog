@@ -9,7 +9,7 @@
     if(isset($_GET['delpost'])){
 
         $Id = $_GET['delpost'];
-        $stmt = $db->prepare('DELETE FROM `balogun_blog_` WHERE `articleId` = :articleId');
+        $stmt = $db->prepare('DELETE FROM `balogun_blog_` WHERE `id` = :articleId');
         $stmt->execute(array(
             ':articleId' => $Id
         ));
@@ -50,7 +50,7 @@
 
         <?php
             try{
-                $stmt = $db->query('SELECT  `articleId`, `articleTitle`, `articleDate` FROM  `balogun_blog_` ORDER BY `articleId` DESC');
+                $stmt = $db->query('SELECT `articleTitle`, `articleDate` FROM  `balogun_blog_` ORDER BY `id` DESC');
                 while($row = $stmt->fetch()){
                     echo '<tr>';
                     echo '<td>' . $row['articleTitle']. '</td>';
@@ -59,10 +59,10 @@
         ?>
 
         <td>
-            <button class="editbtn"> <a href="edit-blog-article.php?id=<?php echo $row['articleId'];?>"> Update </a></button>
+            <button class="editbtn"> <a href="edit-blog-article.php?id=<?php echo $row['id'];?>"> Update </a></button>
         </td>
         <td>
-            <button class="delbtn"> <a href="javascript:delpost('<?php echo $row['articleId'];?>','<?php echo $row['articleTitle'];?>')"> Delete </a></button>
+            <button class="delbtn"> <a href="javascript:delpost('<?php echo $row['id'];?>','<?php echo $row['articleTitle'];?>')"> Delete </a></button>
         </td>
 
         <?php
