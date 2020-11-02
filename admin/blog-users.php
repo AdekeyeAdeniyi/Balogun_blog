@@ -37,6 +37,7 @@
         //show message from add/ edit page
         if(isset($_GET['action'])){
             echo '<h3> User '. $_GET['action'] . '</h3>';
+            echo $_GET['action'];
         }
     ?>
 
@@ -59,7 +60,7 @@
         ?>
 
             <td>
-                <button class="editbtn"><a href="edit-blog-user.php?id=<?php echo $row['id'];?>">Edit</a></button>
+                <button class="editbtn"><a href="edit-blog-users.php?id=<?php echo $row['id'];?>">Edit</a></button>
 
             <?php
                 if($row['id'] != 1){

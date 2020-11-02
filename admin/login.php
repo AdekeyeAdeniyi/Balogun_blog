@@ -25,7 +25,7 @@
         </div>
         <div class="form-group">
             <lable for="password"> Password: </label>
-            <input type="text" name="password" value="" required />
+            <input type="password" name="password" value="" required />
         </div>
 
         <input type="submit" name="submit" value="Sign In" />
