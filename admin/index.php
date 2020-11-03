@@ -14,7 +14,7 @@
             ':articleId' => $Id
         ));
 
-        // header('Location: index.php?action=deleted');
+        header('Location: index.php?action=deleted');
     }
 
 ?>
@@ -50,7 +50,7 @@
 
         <?php
             try{
-                $stmt = $db->query('SELECT `id`, `articleTitle`, `articleDate` FROM  `balogun_blog_` ORDER BY `id` DESC');
+                $stmt = $db->query('SELECT id, articleTitle, articleDate FROM  balogun_blog_ ORDER BY id DESC');
                 while($row = $stmt->fetch()){
                     echo '<tr>';
                     echo '<td>' . $row['articleTitle']. '</td>';
